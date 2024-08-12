@@ -1,5 +1,9 @@
 #include<stdio.h>
-/* Use the puts fonction to print a short sentence */
+/**
+* main - Use the puts fonction to print a short sentence
+* Return: 0
+*/
+
 int main(void)
 {
 
