@@ -2,8 +2,9 @@
 /* more headers goes there */
 
 /**
-* main - print the alphabet in lowercase, followed by a new line
-*Return: 0
+ *print_alphabet - print the alphabet in lowercase, followed by a new line
+ *parameters - int to print ASCII symbols
+* Return: void
 */
 
 	void print_alphabet(void)
