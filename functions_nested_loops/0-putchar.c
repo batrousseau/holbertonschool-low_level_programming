@@ -1,16 +1,23 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <time.h>
-/* more headers goes there */
+#include "main.h"
 
 /**
-* main - Prints _putchar
-*Return: 0
+* main - writes a series of character according to requirements
+* by using putchar function
+* Return: 0.
 */
+
+
 int main(void)
 {
 
-printf("_putchar\n");
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
 
-	return (0);
+return (0);
 }
