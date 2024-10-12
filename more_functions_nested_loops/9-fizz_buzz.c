@@ -14,7 +14,7 @@ void fizzbuzz(void)
 {
 int number = 0;
 
-for (number = 1; number <= 100; number++)
+for (number = 1; number <= 99; number++)
 {
 	if (number % 3 == 0 && number % 5 == 0)
 	{
@@ -33,6 +33,7 @@ for (number = 1; number <= 100; number++)
 	printf("%d ", number);
 	}
 }
+printf("Buzz");
 printf("\n");
 }
 
