@@ -1,11 +1,13 @@
-#include "main.h"
 #include <stdio.h>
 /* more headers goes there */
 
 /**
-* buzzfizz - Prints the buzzfizz test
+* main - check the code
+* Return : Always 0.
+*
+* fizzbuzz - Prints the buzzfizz test
 * followed by a new line
-*Return:void
+* Return:void
 */
 
 void fizzbuzz(void)
@@ -33,3 +35,10 @@ for (number = 1; number <= 100; number++)
 }
 printf("\n");
 }
+
+int main(void)
+{
+	fizzbuzz();
+	return (0);
+}
+
