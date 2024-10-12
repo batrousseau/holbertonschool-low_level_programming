@@ -23,11 +23,11 @@ if (size <= 0)
 	{
 		for (i = size ; i != 0; i--)
 		{
-			for (j = 0; j < i; j++)
+			for (j = 0; j < i - 1; j++)
 			{
 			_putchar(32);
 			}
-			for (k = size; k > i - 1; k --)
+			for (k = size; k > i - 1; k--)
 			{
 			_putchar(35);
 			}
