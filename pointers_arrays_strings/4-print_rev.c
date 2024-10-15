@@ -20,7 +20,7 @@ for (i = 0; *(s + i) != 0; i++)
 partial_result = i;
 }
 
-for (partial_result = i; partial_result != *s && partial_result > 0; partial_result--)
+for (partial_result = i; partial_result != *s && partial_result >= 0; partial_result--)
 {
 _putchar(*(s + partial_result));
 }
