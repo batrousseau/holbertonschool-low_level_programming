@@ -12,17 +12,16 @@ void print_rev(char *s)
 {
 
 int i = 0;
-int partial_result = 0;
-
+int partial_r = 0;
 
 for (i = 0; *(s + i) != 0; i++)
 {
-partial_result = i;
+partial_r = i;
 }
 
-for (partial_result = i - 1; partial_result != *s && partial_result >= 0; partial_result--)
+for (partial_r = i - 1; *(s + partial_r) != *(s - 1); partial_r--)
 {
-_putchar(*(s + partial_result));
+_putchar(*(s + partial_r));
 }
 _putchar('\n');
 
