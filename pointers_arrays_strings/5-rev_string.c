@@ -4,8 +4,8 @@
 /**
 *swap_char - swaps the value of
 * two characters
-* @a : pointers to char a
-* @b : pointers to char b
+* @a : pointers to character a
+* @b : pointers to character b
 * Return : void
 */
 
@@ -26,20 +26,17 @@ char temp = *a;
 void rev_string(char *s)
 {
 int i = 0;
-int strlen = 0;
-int j = strlen / 2;
 int k = 0;
-
 /** Getting string lenght **/
 for (i = 0; *(s + i) != 0; i++)
 {
-strlen = i;
 }
 
-/** Swapping characters **/
-for (k = 0; k <= j; k++)
+/* Swapping characters */
+for (k = 0; k < i; i--, k++)
 {
-swap_char (s, (s + strlen));
+swap_char (s + k, s + i - 1);
 }
 
 }
+
