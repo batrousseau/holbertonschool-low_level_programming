@@ -54,7 +54,7 @@ for (i = 0; *(s + i) <= 48 || *(s + i) >= 57 ; i++)
 	plus++;
 	}
 }
-if (minus %2 == 1)
+if (minus % 2 == 1)
 {
 sign = -sign;
 }
