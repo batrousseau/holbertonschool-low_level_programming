@@ -24,7 +24,7 @@ dest_lenght = i;
 
 /* Copying src to dest with  dest lenght delta */
 
-for (j = 0; *(src +j) != '\0'; j++)
+for (j = 0; *(src + j) != '\0'; j++)
 {
 *(dest + dest_lenght + j) = *(src + j);
 }
