@@ -17,15 +17,9 @@ src_lenght = i;
 return (src_lenght);
 }
 
-/**
-* getting_dest_lenght - get dest lenght
-* @dest : what you want to copy
-* Return: dest_lenght as an int
-*/
-
 
 /**
-* _strncpy - copy one string to another
+* *_strncpy - copy one string to another
 * @dest: what you have
 * @src: what you wan't to copy
 * @n : an int
