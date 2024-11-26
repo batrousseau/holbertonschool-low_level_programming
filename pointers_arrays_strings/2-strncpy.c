@@ -57,7 +57,7 @@ else
 	{
 	*(dest + j) = *(src + j);
 	}
-	for (j = src_lenght ; j <= n; j++)
+	for (j = src_lenght ; j < n; j++)
 	{
 	*(dest + j) = '\0';
 	}
