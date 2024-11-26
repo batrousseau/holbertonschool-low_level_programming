@@ -23,6 +23,17 @@ return (src_lenght);
 * Return: dest_lenght as an int
 */
 
+int getting_dest_lenght(char *dest)
+{
+int k = 0;
+int dest_lenght = 0;
+
+for (k = 0; *(dest + k) != '\0'; k++)
+{
+}
+dest_lenght = k;
+return (dest_lenght);
+}
 
 /**
 * _strncpy - copy one string to another
@@ -37,7 +48,7 @@ char *_strncpy(char *dest, char *src, int n)
 int j = 0;
 
 int src_lenght = getting_src_lenght(src);
-
+int dest_lenght = getting_dest_lenght(dest);
 
 /* If I don't copy the entire src, I don't care about null character*/
 
