@@ -12,20 +12,18 @@ void reverse_array(int *a, int n)
 int i = 0;
 int temp = 0;
 
-if ( n == 0)
+if (n == 0)
 {
 }
 
 else
 {
-  for (i = 0; i <= n ; i++, n--)
-  {
-  temp = a[i];
-
-  a[i] = a[n - 1];
-
-  a[n - 1] = temp;
-  }
+	for (i = 0; i <= n ; i++, n--)
+	{
+	temp = a[i];
+	a[i] = a[n - 1];
+	a[n - 1] = temp;
+	}
 }
 
 }
