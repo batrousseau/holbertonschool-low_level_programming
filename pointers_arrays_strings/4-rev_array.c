@@ -14,7 +14,6 @@ int temp = 0;
 
 if ( n == 0)
 {
->>>>>>> origin/main
 }
 
 else
