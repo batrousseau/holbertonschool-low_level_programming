@@ -73,9 +73,14 @@ return (s);
 
 char *cap_string(char *s)
 {
-
+int i = 0;
 char *partial = cap1(s);
 char *final = cap2(partial);
+
+if (*(final + i) >= 97 && *(final + i) <= 122)
+{
+*(final + i) = *(final + i) - 32;
+}
 
 return (final);
 }
