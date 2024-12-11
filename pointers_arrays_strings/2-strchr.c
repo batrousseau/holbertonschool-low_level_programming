@@ -26,6 +26,14 @@ for (i = 0; *(s + i) != '\0'; i++)
 	}
 }
 
-return (NULL);
+if (*(s + i) == '\0')
+{
+p = (s + i);
+return (p);
+}
 
+else
+{
+return (NULL);
+}
 }
