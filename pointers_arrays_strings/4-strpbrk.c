@@ -13,25 +13,28 @@ char *_strpbrk(char *s, char *accept)
 {
 int i = 0;
 int j = 0;
-
+char *p = 0;
 for (i = 0; *(s + i) != '\0'; i++)
 {
 	for (j = 0; *(accept + j) != '\0'; j++)
 	{
 		if (*(s + i) == *(accept + j))
 		{
-		return ((s + i));
+		p = (s + i);
+		return (p);
 		}
 	}
 }
 
 if (*(s + i) == '\0' && *(accept + j) == '\0')
 {
-return ((s + i));
+p = (s + i);
+return (p);
 }
 else
 {
-return (NULL);
+p = NULL;
+return (p);
 }
 
 }
