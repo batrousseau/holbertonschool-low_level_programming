@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stddef.h>
-
 /**
 * _strchr - locates a character
 * in a string
@@ -28,7 +27,7 @@ for (i = 0; *(s + i) != '\0'; i++)
 
 }
 
-if (c == '\0')
+if ( *(s + i )== '\0' && c == '\0')
 {
 p = '\0';
 return (p);
