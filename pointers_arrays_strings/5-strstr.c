@@ -28,17 +28,16 @@ for (i = 0; *(haystack + i) != '\0'; i++)
 	first_char = i;
 		for (j = 0; *(haystack + first_char + j) == *(needle + j); j++)
 		{
-			if (*(needle + j) == '\0')
-			{
-			p = (haystack + i);
-			return (p);
-			}
 		}
-		return(p);
+		if (*(needle + j) == '\0')
+		{
+		return ((haystack + first_char));
+		}
+	}
+	else
+	{
 	}
 
 }
 return (p);
-
-
 }
