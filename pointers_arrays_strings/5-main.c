@@ -8,11 +8,11 @@
  */
 int main(void)
 {
-    char str[] = "It's SUPER that you 123 consider - that!\n";
-    char *ptr;
+        char *s = "First, solve the problem. Then, write the code.";
+    char *f = "solve";
+    char *t;
 
-    ptr = string_toupper(str);
-    printf("%s", ptr);
-    printf("%s", str);
+    t = _strstr(s, f);
+    printf("%s\n", t);
     return (0);
 }

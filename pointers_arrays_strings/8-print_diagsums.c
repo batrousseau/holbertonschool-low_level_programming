@@ -13,14 +13,27 @@ void print_diagsums(int *a, int size)
 {
 
 int i = 0;
-int j = 0;
+int size_square = size * size;
 int diag_down = 0;
+int rev_diag = 0;
 
-for (i = 0; i < size; i++, j++)
+/* Doing the first diag of interval size + 1 */
+
+for (i = 0; i < size_square; i += (size + 1))
 {
-printf("The value is %d\n", a[i][j]);
-diag_down = diag_down + a[i][j];
+diag_down = diag_down + *(a + i);
 }
-printf("The sum of first diag is %d", diag_down);
+printf("%d, ", diag_down);
+
+
+
+
+/*Doing the other diag of interval size - 1*/
+
+for (i = (size - 1); i < (size_square - 1); i += (size - 1))
+{
+rev_diag = rev_diag + *(a + i);
+}
+printf("%d\n", rev_diag);
 
 }
