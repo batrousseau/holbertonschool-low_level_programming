@@ -42,7 +42,7 @@ return (result);
 
 void absolute_as_string(int n)
 {
-char s[7];
+char s[11];
 int i = 0;
 int lenght = 0;
 
