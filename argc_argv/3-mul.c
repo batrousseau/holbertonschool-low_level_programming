@@ -73,9 +73,9 @@ lenght = i - 1;
 
 int main(int argc, char *argv[])
 {
-int arg1 = string_to_int(argv[1]);
-int arg2 = string_to_int(argv[2]);
-int result = arg1 * arg2;
+int arg1 = 0;
+int arg2 = 0;
+int result = 0;
 
 if (argc != 3)
 {
@@ -87,26 +87,29 @@ _putchar(114);
 _putchar(10);
 return (1);
 }
-
-if (result > 0)
-{
-absolute_as_string(result);
-_putchar(10);
-return (0);
-}
-
-if (result < 0)
-{
-_putchar('-');
-absolute_as_string(-result);
-_putchar(10);
-return (0);
-}
-
 else
 {
-_putchar(48);
-_putchar(10);
-return (0);
+arg1 = string_to_int(argv[1]);
+arg2 = string_to_int(argv[2]);
+result = arg1 *arg2;
+	if (result > 0)
+	{
+	absolute_as_string(result);
+	_putchar(10);
+	return (0);
+	}
+	if (result < 0)
+	{
+	_putchar('-');
+	absolute_as_string(-result);
+	_putchar(10);
+	return (0);
+	}
+	else
+	{
+	_putchar(48);
+	_putchar(10);
+	return (0);
+	}
 }
 }
