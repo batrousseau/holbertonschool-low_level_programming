@@ -76,7 +76,6 @@ if (argc <= 2)
 {
 _putchar(48);
 _putchar(10);
-return (-1);
 }
 else
 {
@@ -99,6 +98,6 @@ else
 	}
 absolute_as_string(result);
 _putchar(10);
-return (0);
 }
+return (0);
 }
