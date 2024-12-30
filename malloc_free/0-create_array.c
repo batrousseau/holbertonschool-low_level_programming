@@ -36,5 +36,5 @@ else
 	return (s);
 	}
 }
-
+free(s);
 }
