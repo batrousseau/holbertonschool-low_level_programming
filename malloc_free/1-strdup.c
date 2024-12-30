@@ -14,8 +14,15 @@ char *_strdup(char *str)
 {
 int i = 0;
 int lenght = 0;
-char *s = malloc(1 * lenght);
-char *temp;
+char *s;
+
+
+for (i = 0; *(str + i) != '\0'; i++)
+{
+}
+lenght = i;
+
+s = malloc(1 * lenght);
 
 if (s == NULL)
 {
@@ -27,26 +34,11 @@ if (str == NULL)
 return (NULL);
 }
 
-for (i = 0; *(str + i) != '\0'; i++)
-{
-}
-lenght = i;
-temp = realloc(s, 1* lenght);
-
-if (!temp)
-{
-return (NULL);
-}
-else
-{
-s = temp;
-}
-
-
 for (i = 0; i <= lenght; i++)
 {
 *(s + i) = *(str + i);
 }
+
 return (s);
 
 
