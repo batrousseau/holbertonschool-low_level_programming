@@ -20,21 +20,16 @@ if (size == 0)
 {
 return (NULL);
 }
-
+if (s == NULL)
+{
+return (NULL);
+}
 else
 {
 	for (i = 0; i <= size; i++)
 	{
 	*(s + i) = c;
 	}
-	if (*(s + 0) != c)
-	{
-	return (NULL);
-	}
-	else
-	{
 	return (s);
-	}
 }
-free(s);
 }
