@@ -18,7 +18,7 @@ unsigned int i = 0;
 char *s = malloc(size * 8);
 if (size == 0)
 {
-return (s);
+return (NULL);
 }
 
 else
