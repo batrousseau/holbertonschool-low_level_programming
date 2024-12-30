@@ -19,7 +19,8 @@ int i = 0;
 
 if (s1 == NULL || s2 == NULL)
 {
-return (NULL);
+sc = NULL;
+return (sc);
 }
 
 for (i = 0; *(s1 + i) != '\0'; i++)
