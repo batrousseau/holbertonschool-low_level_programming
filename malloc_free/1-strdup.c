@@ -25,9 +25,9 @@ return (NULL);
 for (i = 0; *(str + i) != '\0'; i++)
 {
 }
-lenght = i;
+lenght = i + 1;
 
-s = malloc(1 * lenght);
+s = malloc(lenght * 1);
 
 if (s == NULL)
 {
@@ -36,10 +36,11 @@ return (NULL);
 
 
 
-for (i = 0; i <= lenght; i++)
+for (i = 0; i < lenght; i++)
 {
 *(s + i) = *(str + i);
 }
+
 
 return (s);
 
