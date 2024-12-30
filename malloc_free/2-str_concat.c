@@ -21,17 +21,14 @@ if (s1 == NULL)
 {
 s1 = "";
 }
-
 if (s2 == NULL)
 {
 s2 = "";
 }
-
 for (i = 0; *(s1 + i) != '\0'; i++)
 {
 }
 lenght_s1 = i;
-
 for (i = 0; *(s2 + i) != '\0'; i++)
 {
 }
@@ -43,12 +40,10 @@ if (sc == NULL)
 {
 return (NULL);
 }
-
 for (i = 0; i <= lenght_s1; i++)
 {
 *(sc + i) = *(s1 + i);
 }
-
 for (i = 0 ; i < lenght_s2; i++)
 {
 *(sc + lenght_s1 + i) = *(s2 + i);
