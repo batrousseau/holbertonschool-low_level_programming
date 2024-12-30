@@ -17,10 +17,14 @@ int lenght_s2 = 0;
 char *sc;
 int i = 0;
 
-if (s1 == NULL || s2 == NULL)
+if (s1 == NULL)
 {
-sc = NULL;
-return (sc);
+s1 = "";
+}
+
+if (s2 == NULL)
+{
+s2 = "";
 }
 
 for (i = 0; *(s1 + i) != '\0'; i++)
