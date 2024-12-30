@@ -27,7 +27,14 @@ else
 	{
 	*(s + i) = c;
 	}
-return (s);
+	if (*(s + 0) != c)
+	{
+	return (NULL);
+	}
+	else
+	{
+	return (s);
+	}
 }
 
 }
