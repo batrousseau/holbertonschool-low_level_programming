@@ -16,6 +16,11 @@ int i = 0;
 int lenght = 0;
 char *s;
 
+if (str == NULL)
+{
+return (NULL);
+}
+
 
 for (i = 0; *(str + i) != '\0'; i++)
 {
@@ -29,10 +34,7 @@ if (s == NULL)
 return (NULL);
 }
 
-if (str == NULL)
-{
-return (NULL);
-}
+
 
 for (i = 0; i <= lenght; i++)
 {
