@@ -18,6 +18,7 @@ int **a = malloc((width * 4));
 
 if (a == NULL)
 {
+free (a);
 return (NULL);
 }
 
@@ -26,6 +27,7 @@ for (i = 0; i < width; i++)
 a[i] = malloc(height * 4);
 	if (a[i] == NULL)
 	{
+	free (a);
 	return (NULL);
 	}
 }
