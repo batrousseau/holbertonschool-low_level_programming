@@ -29,10 +29,10 @@ return (NULL);
 
 for (i = 0; i < height; i++)
 {
-a[i] = malloc(8 * width);
+a[i] = malloc(4 * width);
 	if (a[i] == NULL)
 	{
-	free(a);
+	free(a[i]);
 	return (NULL);
 	}
 }
