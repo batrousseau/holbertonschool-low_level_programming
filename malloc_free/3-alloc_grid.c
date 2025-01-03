@@ -23,7 +23,6 @@ return (NULL);
 
 if (a == NULL)
 {
-free(a);
 return (NULL);
 }
 
@@ -32,7 +31,6 @@ for (i = 0; i < height; i++)
 a[i] = malloc(4 * width);
 	if (a[i] == NULL)
 	{
-	free(a[i]);
 	return (NULL);
 	}
 }
