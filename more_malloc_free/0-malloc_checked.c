@@ -15,9 +15,10 @@ void *p = malloc(b);
 
 if (p == NULL)
 {
-return(p);
+p = "98";
+return (p);
 }
 
-return(p);
+return (p);
 
 }
