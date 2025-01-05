@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+
 /**
 * null_rplc - verify if a string is NULL
 * and replace it by blank character if it is
@@ -50,6 +51,7 @@ unsigned int _strlen(char *s)
 {
 unsigned int i = 0;
 unsigned int result = 0;
+
 for (i = 0; *(s + i) != '\0'; i++)
 {
 }
@@ -58,7 +60,7 @@ return (result);
 }
 
 /**
-* str_nconcat - concatenats two strings
+* string_nconcat - concatenats two strings
 * @s1: first string
 * @s2: second string
 * @n: lenght of s2 to copy
@@ -81,7 +83,7 @@ lenght_s2 = _strlen(s2);
 
 if (n >= lenght_s2)
 {
-	sc = malloc(lenght_s1 + lenght_s2);
+	sc = malloc(lenght_s1 + lenght_s2 + sizeof(char));
 	if (sc == NULL)
 	{
 	return (NULL);
@@ -94,7 +96,7 @@ if (n >= lenght_s2)
 }
 else
 {
-	sc = malloc(lenght_s1 + n);
+	sc = malloc(lenght_s1 + n + sizeof(char));
 	if (sc == NULL)
 	{
 	return (NULL);
@@ -104,6 +106,7 @@ else
 	{
 	*(sc + lenght_s1 + i) = *(s2 + i);
 	}
+
 }
 return (sc);
 }
