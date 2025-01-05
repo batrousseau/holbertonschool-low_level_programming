@@ -15,8 +15,8 @@ void *p = malloc(b);
 
 if (p == NULL)
 {
-p = "98";
-return (p);
+
+exit(98);
 }
 
 return (p);
