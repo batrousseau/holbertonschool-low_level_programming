@@ -83,7 +83,7 @@ lenght_s2 = _strlen(s2);
 
 if (n >= lenght_s2)
 {
-	sc = malloc(lenght_s1 + lenght_s2 + sizeof(char));
+	sc = malloc(lenght_s1 + lenght_s2 + sizeof(char) + 1);
 	if (sc == NULL)
 	{
 	return (NULL);
@@ -93,10 +93,11 @@ if (n >= lenght_s2)
 	{
 	*(sc + lenght_s1 + i) = *(s2 + i);
 	}
+	*(sc + lenght_s1 + i) = '\0';
 }
 else
 {
-	sc = malloc(lenght_s1 + n + sizeof(char));
+	sc = malloc(lenght_s1 + n + sizeof(char) + 1);
 	if (sc == NULL)
 	{
 	return (NULL);
@@ -106,7 +107,7 @@ else
 	{
 	*(sc + lenght_s1 + i) = *(s2 + i);
 	}
-
+	*(sc + lenght_s1 + i) = '\0';
 }
 return (sc);
 }
