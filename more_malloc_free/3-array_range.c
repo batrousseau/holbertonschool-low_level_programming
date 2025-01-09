@@ -12,6 +12,7 @@ int *array_range(int min, int max)
 {
 int i = 0;
 int j = 0;
+int k = 0;
 int lenght = 0;
 int *p;
 
@@ -26,7 +27,7 @@ for (i = min; i <= max; i++)
 {
 j++;
 }
-lenght = j + 2;
+lenght = j;
 
 p = malloc(sizeof(int) * lenght);
 if (p == NULL)
@@ -34,9 +35,9 @@ if (p == NULL)
 return (NULL);
 }
 
-for (i = min; i <= max; i++)
+for (i = min; i <= max; i++, k++)
 {
-*(p + i) = i;
+*(p + k) = i;
 }
 
 return (p);
