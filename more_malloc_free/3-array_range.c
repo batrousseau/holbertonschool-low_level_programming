@@ -26,9 +26,9 @@ for (i = min; i <= max; i++)
 {
 j++;
 }
-lenght = j + 1;
+lenght = j + 2;
 
-p = malloc(lenght * sizeof(int));
+p = malloc(sizeof(int) * lenght);
 if (p == NULL)
 {
 return (NULL);
