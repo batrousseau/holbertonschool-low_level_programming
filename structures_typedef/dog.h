@@ -1,6 +1,7 @@
+#include "main.h"
 
 /**
-* dog - a dog
+* struct dog - a dog
 * @name: his name
 * @age: his age
 * @owner: his owner
