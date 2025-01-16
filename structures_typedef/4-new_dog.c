@@ -43,26 +43,13 @@ if (d == NULL || stored_name == NULL || stored_owner == NULL)
 return (NULL);
 }
 
-
-d->name = name;
-
-if (name == NULL)
-{
-return (NULL);
-}
-
 stored_name = name;
+d->name = name;
 
 d->age = age;
 
-
-d->owner = owner;
-
-if (owner == NULL)
-{
-return (NULL);
-}
 stored_owner = owner;
+d->owner = stored_owner;
 
 return (d);
 
