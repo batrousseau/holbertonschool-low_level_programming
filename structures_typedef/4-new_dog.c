@@ -39,10 +39,6 @@ if (d == NULL || stored_name == NULL || stored_owner == NULL)
 return (NULL);
 }
 
-d->name = name;
-d->age = age;
-d->owner = owner;
-
 for (i = 0; i < _strlen(name); i++)
 {
 *(stored_name + i) = *(name + i);
@@ -54,6 +50,10 @@ for (i = 0; i < _strlen(owner); i++)
 *(stored_owner + i) = *(owner + i);
 }
 *(stored_owner + i) = '\0';
+
+d->name = stored_name;
+d->age = age;
+d->owner = owner;
 
 return (d);
 
