@@ -44,7 +44,7 @@ return (NULL);
 }
 
 stored_name = name;
-d->name = name;
+d->name = stored_name;
 
 d->age = age;
 
