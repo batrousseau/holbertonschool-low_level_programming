@@ -51,7 +51,7 @@ for (i = 0; i < _strlen(owner); i++)
 }
 *(stored_owner + i) = '\0';
 
-d->name = stored_name;
+d->name = name;
 d->age = age;
 d->owner = owner;
 
