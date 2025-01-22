@@ -6,7 +6,6 @@
 * @s: the string
 * Return: lenght as an int
 */
-
 int _strlen(char *s)
 {
 int i = 0;
@@ -26,7 +25,6 @@ return (strlen);
 * @owner: his owner
 * Return: pointer to structure
 */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
 char *stored_name = malloc(sizeof(char) * (_strlen(name) + 1));
@@ -36,6 +34,9 @@ int i = 0;
 
 if (d == NULL || stored_name == NULL || stored_owner == NULL)
 {
+free(d);
+free(stored_name);
+free(stored_owner);
 return (NULL);
 }
 
@@ -51,9 +52,9 @@ for (i = 0; i < _strlen(owner); i++)
 }
 *(stored_owner + i) = '\0';
 
-d->name = name;
+d->name = stored_name;
 d->age = age;
-d->owner = owner;
+d->owner = stored_owner;
 
 return (d);
 
