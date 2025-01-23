@@ -10,16 +10,14 @@
 
 void free_dog(dog_t *d)
 {
-char *owner = d->owner;
-char *name = d->name;
 
 if (d == NULL)
 {
-free(d);
+return;
 }
 
-free(name);
-free(owner);
+free(d->name);
+free(d->owner);
 free(d);
 
 }
