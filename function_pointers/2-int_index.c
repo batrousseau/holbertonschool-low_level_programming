@@ -1,5 +1,5 @@
 #include "function_pointers.h"
-#include <stdio.h>
+#include <stddef.h>
 
 /**
 * int_index - find the integer that matches the
@@ -16,6 +16,11 @@ int int_index(int *array, int size, int (*cmp)(int))
 {
 int i = 0;
 int j = 0;
+if (array == NULL || cmp == NULL)
+{
+return(-1);
+}
+
 if (size <= 0)
 {
 return (-1);
