@@ -30,7 +30,8 @@ f = get_op_func(arg2);
 
 if (f == NULL)
 {
-	return (-1);
+	printf("Error\n");
+	exit(99);
 }
 else
 {
