@@ -12,9 +12,9 @@
 
 int main(int argc, char *argv[])
 {
-	int arg1 = atoi(argv[1]);
-	int arg3 = atoi(argv[3]);
-	char *arg2 = argv[2];
+	int arg1 = 0;
+	int arg3 = 0;
+	char *arg2;
 	int result = 0;
 	int (*f)(int, int);
 
@@ -23,7 +23,9 @@ if (argc != 4)
 	printf("Error\n");
 	exit(98);
 }
-
+arg1 = atoi(argv[1]);
+arg2 = argv[2];
+arg3 = atoi(argv[3]);
 f = get_op_func(arg2);
 
 if (f == NULL)
