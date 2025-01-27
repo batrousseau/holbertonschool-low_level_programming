@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * main - check the code
@@ -27,6 +28,13 @@ arg1 = atoi(argv[1]);
 arg2 = argv[2];
 arg3 = atoi(argv[3]);
 f = get_op_func(arg2);
+
+if (strlen(arg2) > 1)
+{
+	printf("Error \n");
+	exit (99);
+}
+
 
 if (f == NULL)
 {
