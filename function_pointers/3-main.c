@@ -31,8 +31,8 @@ f = get_op_func(arg2);
 
 if (strlen(arg2) > 1)
 {
-	printf("Error \n");
-	exit (99);
+	printf("Error\n");
+	exit(99);
 }
 
 
