@@ -17,9 +17,10 @@ unsigned int i = 0;
 va_list args;
 int number = 0;
 
-if(n == 0)
+if (n == 0)
 {
-	va_start(args,n);
+	va_start(args, n);
+	printf("\n");
 	va_end(args);
 	exit(0);
 }
