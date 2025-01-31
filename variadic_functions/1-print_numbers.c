@@ -21,7 +21,6 @@ if(n == 0)
 {
 	va_start(args,n);
 	va_end(args);
-	printf("%d\n", n);
 	exit(0);
 }
 
