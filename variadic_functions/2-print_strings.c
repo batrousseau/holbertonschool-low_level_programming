@@ -37,6 +37,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s%s", s, separator);
 		}
 	s = va_arg(args, char *);
+	if (s == NULL)
+	{
+		s = "(nil)";
+	}
 	printf("%s\n", s);
 	va_end(args);
 
