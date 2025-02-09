@@ -80,7 +80,6 @@ void print_all(const char * const format, ...)
 {
 	int i = 0;
 	int j = 0;
-	int f_lenght = strlen(format);
 	va_list args;
 	type_a array[] = {
 	{'c', &p_char},
@@ -91,7 +90,7 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	while (i < f_lenght)
+	while (*(format + i) != '\0')
 	{
 
 		while (j < 4)
@@ -99,7 +98,10 @@ void print_all(const char * const format, ...)
 			if (*(format + i) == array[j].x)
 			{
 			array[j].fp(args);
-			if (i < f_lenght - 1)
+			if (*(format + i + 1) == '\0')
+				{
+				}
+			else
 				{
 				printf(", ");
 				}
