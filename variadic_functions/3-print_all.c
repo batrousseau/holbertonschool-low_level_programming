@@ -98,10 +98,7 @@ void print_all(const char * const format, ...)
 			if (*(format + i) == array[j].x)
 			{
 			array[j].fp(args);
-			if (*(format + i + 1) == '\0')
-				{
-				}
-			else
+			if (*(format + i + 1) != '\0')
 				{
 				printf(", ");
 				}
