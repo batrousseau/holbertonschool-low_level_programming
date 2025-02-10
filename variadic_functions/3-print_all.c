@@ -57,8 +57,12 @@ void p_string(va_list args)
 {
 	char *c;
 
-	c = va_arg(args, char*);
 
+	c = va_arg(args, char*);
+	if (c == NULL)
+	{
+		printf("(nil)");
+	}
 	printf("%s", c);
 }
 
@@ -74,6 +78,7 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	int j = 0;
 	va_list args;
+	char *separator = "";
 	type_a array[] = {
 	{'c', &p_char},
 	{'i', &p_int},
@@ -90,11 +95,9 @@ void print_all(const char * const format, ...)
 		{
 			if (*(format + i) == array[j].x)
 			{
+			printf("%s", separator);
 			array[j].fp(args);
-			if (*(format + i + 1) != '\0')
-				{
-				printf(", ");
-				}
+			separator = ", ";
 			}
 		j++;
 		}
