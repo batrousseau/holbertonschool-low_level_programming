@@ -57,7 +57,6 @@ void p_string(va_list args)
 {
 	char *c;
 
-
 	c = va_arg(args, char*);
 	if (c == NULL)
 	{
@@ -88,22 +87,24 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	while (*(format + i) != '\0')
+	while (format && *(format + i) != '\0')
 	{
 
 		while (j < 4)
 		{
 			if (*(format + i) == array[j].x)
 			{
-			printf("%s", separator);
-			array[j].fp(args);
-			separator = ", ";
+				printf("%s", separator);
+				array[j].fp(args);
+				separator = ", ";
 			}
-		j++;
+			j++;
 		}
 	j = 0;
 	i++;
 	}
 	va_end(args);
 	printf("\n");
-}
+	}
+
+
