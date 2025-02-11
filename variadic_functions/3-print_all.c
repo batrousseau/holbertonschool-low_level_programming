@@ -60,7 +60,7 @@ void p_string(va_list args)
 	c = va_arg(args, char*);
 	if (c == NULL)
 	{
-		printf("(nil)");
+		c = "(nil)";
 	}
 	printf("%s", c);
 }
