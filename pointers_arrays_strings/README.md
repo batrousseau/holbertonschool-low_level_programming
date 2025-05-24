@@ -74,10 +74,7 @@ Ce projet approfondit la compréhension des pointeurs, des tableaux et des chaî
 - **Fonction** : `int _atoi(char *s);`
 - **Utilité** : Convertit la chaîne `s` en entier.
 
-### `101-keygen.c`
 
-- **Fonction** : `int main(void);`
-- **Utilité** : Génère un mot de passe aléatoire pour le programme `101-crackme`.
 
 ## 🧪 Compilation
 
