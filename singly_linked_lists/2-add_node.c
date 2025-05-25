@@ -10,7 +10,7 @@
  */
 
 unsigned int get_lenght(char *s)
- {
+{
 	unsigned int i = 0;
 	unsigned int result = 0;
 
@@ -19,7 +19,7 @@ unsigned int get_lenght(char *s)
 	}
 	result = i;
 	return (result);
- }
+}
 
 
 
@@ -36,10 +36,21 @@ list_t *add_node(list_t **head, const char *str)
 	/* I declare local structure and a struct pointer */
 	list_t first_nodde;
 	list_t *first_pointer;
+
 	first_nodde.str = strdup(str);
+
+	if (first_nodde.str == NULL)
+	{
+		exit(EXIT_FAILURE);
+	}
 
 	/* I alloc the space to create a struct dynamically*/
 	first_pointer = malloc(sizeof(list_t));
+
+	if (first_pointer == NULL)
+	{
+		exit(EXIT_FAILURE);
+	}
 
 	/* I copy local structure in my dynamic space */
 	first_pointer->str = strdup(first_nodde.str);
@@ -58,7 +69,5 @@ list_t *add_node(list_t **head, const char *str)
 		first_pointer->next = *(head);
 		*(head) = first_pointer;
 	}
-
 	return (*(head));
-
 }
