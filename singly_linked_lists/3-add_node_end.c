@@ -46,6 +46,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	last_pointer->str = strdup(str);
 	if (last_pointer->str == NULL)
 	{
+		free(last_pointer);
 		exit(EXIT_FAILURE);
 	}
 	last_pointer->len = get_lenght(last_pointer->str);
