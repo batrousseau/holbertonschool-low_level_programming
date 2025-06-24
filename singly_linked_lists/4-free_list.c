@@ -12,13 +12,15 @@
 void free_list(list_t *head)
 {
 	int i = 0;
-	list_t *tmp = head;
-	list_t *tmp2 = tmp;
+	list_t *tmp;
+	list_t *tmp2;
 
-	if(head == NULL)
+	if (head == NULL)
 	{
 		exit(EXIT_FAILURE);
 	}
+	tmp = head;
+	tmp2 = tmp;
 
 	for (i = 0; tmp->next != NULL ; i++)
 	{
