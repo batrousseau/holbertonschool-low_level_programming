@@ -11,10 +11,14 @@
 
 void free_list(list_t *head)
 {
-
 	int i = 0;
 	list_t *tmp = head;
 	list_t *tmp2 = tmp;
+
+	if(head == NULL)
+	{
+		exit(EXIT_FAILURE);
+	}
 
 	for (i = 0; tmp->next != NULL ; i++)
 	{
