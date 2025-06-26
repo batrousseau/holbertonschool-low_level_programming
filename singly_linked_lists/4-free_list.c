@@ -17,7 +17,7 @@ void free_list(list_t *head)
 
 	if (head == NULL)
 	{
-		exit(EXIT_FAILURE);
+		exit(1);
 	}
 	tmp = head;
 	tmp2 = tmp;
