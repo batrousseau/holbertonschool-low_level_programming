@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-    _puts_recursion("New test !");
+    _puts_recursion("First, solve the problem. Then, write the code");
     return (0);
 }

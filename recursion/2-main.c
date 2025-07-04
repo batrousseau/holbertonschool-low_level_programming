@@ -1,6 +1,6 @@
+#include "main.h"
 #include <stdio.h>
-#include "dog.h"
-#include <stddef.h>
+
 /**
  * main - check the code
  *
@@ -8,10 +8,9 @@
  */
 int main(void)
 {
-    dog_t *my_dog;
+    int n;
 
-    my_dog = NULL;
-
-    free_dog(my_dog);
+    n = _strlen_recursion("Corbin Coleman");
+    printf("%d\n", n);
     return (0);
 }
