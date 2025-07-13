@@ -24,6 +24,10 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 	for (i = 0; i != index; i++)
 	{
+		if (tmp->next == NULL)
+		{
+		return (NULL);
+		}
 		tmp = tmp->next;
 	}
 	indexed_node = tmp;
