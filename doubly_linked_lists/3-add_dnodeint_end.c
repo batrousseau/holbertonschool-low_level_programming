@@ -45,6 +45,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		/* When we find the last node, we make the link*/
 		tmp->next = last_node;
 		last_node->prev = tmp;
+		last_node->next = NULL;
 	}
 	return (*head);
 }
