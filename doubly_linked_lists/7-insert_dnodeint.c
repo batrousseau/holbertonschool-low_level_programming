@@ -19,29 +19,23 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *node_before = NULL;
 
 	if (*h == NULL)
-	{
-		/* If the list is empty, do not insert */
 		return (NULL);
-	}
 
-	/* Traverse the list to reach the node currently at index idx */
-	for (i = 0; i != idx; i++)
-	{
-		if (tmp->next == NULL)
-		{
-			/* If we reach the end before idx, insertion is impossible */
-			return (NULL);
-		}
+	/* Special case: insert at the beginning of the list */
+	if (idx == 0)
+		return (add_dnodeint(h, n));
+
+	/* Traverse the list until we reach the node at index */
+	for (i = 0; tmp != NULL && i != idx; i++)
 		tmp = tmp->next;
-	}
 
-	/* Save the node before the insertion point */
+	/* Special case: insert at the end of the list */
+	if (tmp == NULL)
+		return (add_dnodeint_end(h, n));
+
+	/* Insert before the node currently at index */
 	node_before = tmp->prev;
-
-	/* Insert the new node just before the current node at idx */
 	tmp = add_dnodeint(&tmp, n);
-
-	/* Link the new node to the previous one */
 	tmp->prev = node_before;
 	node_before->next = tmp;
 
