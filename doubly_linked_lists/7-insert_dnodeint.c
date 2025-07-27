@@ -15,22 +15,17 @@
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	unsigned int i = 0;
-	dlistint_t *tmp = *h;
-	dlistint_t *node_before = NULL;
-	dlistint_t *node_end_list = NULL;
+	dlistint_t *tmp = *h, *node_before = NULL, *node_end_list = NULL;
 
 	if (*h == NULL) /* Empty list case*/
 	{
 		if (idx == 0) /* If the index is 0, create the list*/
 		{
 			return (add_dnodeint_end(h, n));
-		}
-		/* If the list is empty and index more than 0, do not insert */
+		} /* If the list is empty and index more than 0, do not insert */
 		return (NULL);
 	}
-
-	/* Special case - Insert at top of the list*/
-	if (idx == 0)
+	if (idx == 0) /* Special case - Insert at top of the list*/
 	{
 		return (add_dnodeint(h, n));
 	}
@@ -46,8 +41,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			node_end_list = (add_dnodeint_end(h, n));
 			return (node_end_list);
 			}
-			/* If not, insertion is impossible */
-			return (NULL);
+			return (NULL); /* If not, insertion is impossible */
 		}
 		tmp = tmp->next;
 	}
