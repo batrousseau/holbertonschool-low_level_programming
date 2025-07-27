@@ -35,12 +35,16 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		if (tmp->next == NULL)
 		{
-			/* If we reach the end before idx, insertion is impossible */
+			/*If I'm right at the end of the list, it's ok*/
+			if (i == idx - 1)
+			{
+				add_dnodeint_end(h,n);
+			}
+			/* If not, insertion is impossible */
 			return (NULL);
 		}
 		tmp = tmp->next;
 	}
-
 	/* Save the node before the insertion point */
 	node_before = tmp->prev;
 
