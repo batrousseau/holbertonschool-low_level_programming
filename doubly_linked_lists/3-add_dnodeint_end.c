@@ -25,6 +25,8 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	}
 	/*No f** worries about memory here since it's already created for and int*/
 	last_node->n = n;
+	last_node->next = NULL;
+	last_node->prev = NULL;
 
 	/*First let's deal with first element of the list */
 	if (*head == NULL)
