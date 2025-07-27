@@ -38,7 +38,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			/*If I'm right at the end of the list, it's ok*/
 			if (i == idx - 1)
 			{
-			return(add_dnodeint(h,n));
+			return(add_dnodeint_end(h,n));
 			}
 			/* If not, insertion is impossible */
 			return (NULL);
