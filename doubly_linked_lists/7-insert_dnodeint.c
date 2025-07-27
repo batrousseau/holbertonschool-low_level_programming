@@ -27,7 +27,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	/* Special case - Insert at top of the list*/
 	if(idx == 0)
 	{
-		add_dnodeint(h, n);
+		return(add_dnodeint_end(h, n));
 	}
 
 	/* Traverse the list to reach the node currently at index idx */
@@ -38,8 +38,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			/*If I'm right at the end of the list, it's ok*/
 			if (i == idx - 1)
 			{
-				add_dnodeint_end(h,n);
-				return (*h);
+			return(add_dnodeint_end(h,n));
 			}
 			/* If not, insertion is impossible */
 			return (NULL);
