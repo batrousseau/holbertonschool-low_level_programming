@@ -25,9 +25,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 
 	/* Special case - Insert at top of the list*/
-	if(idx == 0)
+	if (idx == 0)
 	{
-		return(add_dnodeint(h, n));
+		return (add_dnodeint(h, n));
 	}
 
 	/* Traverse the list to reach the node currently at index idx */
@@ -38,7 +38,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			/*If I'm right at the end of the list, it's ok*/
 			if (i == idx - 1)
 			{
-			return(add_dnodeint_end(h,n));
+			return (add_dnodeint_end(h, n));
 			}
 			/* If not, insertion is impossible */
 			return (NULL);
@@ -47,13 +47,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	/* Save the node before the insertion point */
 	node_before = tmp->prev;
-
 	/* Insert the new node just before the current node at idx */
 	tmp = add_dnodeint(&tmp, n);
-
 	/* Link the new node to the previous one */
 	tmp->prev = node_before;
 	node_before->next = tmp;
-
 	return (*h);
 }
