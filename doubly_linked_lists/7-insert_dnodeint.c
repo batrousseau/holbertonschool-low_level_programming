@@ -17,10 +17,15 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int i = 0;
 	dlistint_t *tmp = *h;
 	dlistint_t *node_before = NULL;
+	dlistint_t *node_end_list = NULL;
 
-	if (*h == NULL)
+	if (*h == NULL) /* Empty list case*/
 	{
-		/* If the list is empty, do not insert */
+		if (idx == 0) /* If the index is 0, create the list*/
+		{
+			return (add_dnodeint_end(h, n));
+		}
+		/* If the list is empty and index more than 0, do not insert */
 		return (NULL);
 	}
 
@@ -38,7 +43,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			/*If I'm right at the end of the list, it's ok*/
 			if (i == idx - 1)
 			{
-			return (add_dnodeint_end(h, n));
+			node_end_list = (add_dnodeint_end(h, n));
+			return (node_end_list);
 			}
 			/* If not, insertion is impossible */
 			return (NULL);
