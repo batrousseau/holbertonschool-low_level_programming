@@ -22,8 +22,7 @@ if (*head == NULL)
 	tmp = NULL;
 	return (-1);
 }
-/* If I want to delete first element of the list */
-if (index == 0)
+if (index == 0)/* If I want to delete first element of the list */
 {
 	*head = tmp->next;
 	(*head)->prev = NULL;
