@@ -26,13 +26,14 @@ if (*head == NULL)
 if (index == 0)
 {
 	*head = tmp->next;
+	(*head)->prev = NULL;
 	free(tmp);
 	return (1);
 }
 
 for (i = 0; i != index; i++)
 {
-	if (tmp->next == NULL)
+	if (tmp->next == NULL) /* When index is going too far*/
 	{
 		return (-1);
 	}
