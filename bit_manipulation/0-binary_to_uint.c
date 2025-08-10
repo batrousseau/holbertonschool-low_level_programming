@@ -34,7 +34,7 @@ unsigned int binary_to_uint(const char *b)
 	for (i = count, j = 0; i >= 0; i--, j++)
 	{
 	byte = *(b + i) - 48;
-		if (byte == 1 && i <= 31)
+		if (byte == 1 && j <= 31)
 		{
 			result = result + (byte << j);
 		}
