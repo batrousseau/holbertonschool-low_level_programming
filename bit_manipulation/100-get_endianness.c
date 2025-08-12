@@ -3,7 +3,7 @@
 #include <stdint.h>
 
 /**
- * get_endianess - check what type of endianess we are
+ * get_endianness - check what type of endianess we are
  * dealing with
  * Return: 0 if big, 1 if little
  */
