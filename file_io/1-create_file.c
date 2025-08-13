@@ -34,7 +34,6 @@ int get_lenght(char *s)
 int create_file(const char *filename, char *text_content)
 {
 	int open_result = 0;
-	/*int read_result = 0;*/
 	int write_result = 0;
 	char *buff = NULL;
 	size_t txt_lght = 0;
@@ -43,8 +42,12 @@ int create_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-
-	open_result = open(filename, O_CREAT | O_RDWR, S_IRUSR | S_IWUSR);
+	/**
+	 * Tricky here : if file don't exist, create and give rw user permissions
+	 * if already created, gave read and write and truncate but don't change
+	 * permissions
+	 */
+	open_result = open(filename, O_CREAT | O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
 	if (open_result == -1)
 	{
 		return (-1);
