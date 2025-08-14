@@ -72,14 +72,12 @@ int cp_file(char *file_from, char *file_to)
  */
 int main(int ac, char **av)
 {
-	int res;
 
 	if (ac != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	res = cp_file(av[1], av[2]);
-	printf("-> %i)\n", res);
+	cp_file(av[1], av[2]);
 	return (0);
 }
