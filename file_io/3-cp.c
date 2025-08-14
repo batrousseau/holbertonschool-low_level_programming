@@ -31,7 +31,7 @@ int cp_file(char *file_from, char *file_to)
 	open_ft_result = open(file_to, O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (open_ft_result == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
 	for (i = 0; read_result != 0; i++)
@@ -45,7 +45,7 @@ int cp_file(char *file_from, char *file_to)
 	write_result = write(open_ft_result, buff, read_result);
 		if (write_result == -1)
 		{
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 		}
 	}
