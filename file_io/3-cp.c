@@ -16,7 +16,7 @@
  * Return: nothing
  */
 
-void ff_error_handler(int n, char *filename)
+void ff_error_handler(size_t n, char *filename)
 {
 	if (n == -1)
 	{
@@ -33,7 +33,7 @@ void ff_error_handler(int n, char *filename)
  * Return: nothing
  */
 
-void ft_error_handler(int n, char *filename)
+void ft_error_handler(size_t n, char *filename)
 {
 	if (n == -1)
 	{
@@ -50,7 +50,7 @@ void ft_error_handler(int n, char *filename)
  * Return: nothing
  */
 
-void closure_error_handler(int n, int fd)
+void closure_error_handler(size_t n, int fd)
 {
 	if (n == -1)
 	{
@@ -69,7 +69,8 @@ void closure_error_handler(int n, int fd)
  */
 int cp_file(char *file_from, char *file_to)
 {
-	int i = 0, open_ff_result = 0, open_ft_result = 0, read_result = 4,
+	int i = 0;
+	size_t open_ff_result = 0, open_ft_result = 0, read_result = 4,
 	write_result = 0, close_ff_result = 0, close_ft_result = 0;
 	char buff[1024];
 
