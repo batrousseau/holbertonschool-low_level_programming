@@ -9,6 +9,57 @@
 
 
 /**
+ * ff_error_handler - deals with errors regarding
+ * the file we try to copy from
+ * @n: int coming from an operation of the file
+ * @filename: name of the file we are testing
+ * Return: nothing
+ */
+
+void ff_error_handler(int n, char *filename)
+{
+	if (n == -1)
+	{
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
+	exit(98);
+	}
+}
+
+/**
+ * ft_error_handler - deals with errors regarding
+ * the file we copy to
+ * @n: int coming from an operation of the file
+ * @filename: name of the file we are testing
+ * Return: nothing
+ */
+
+void ft_error_handler(int n, char *filename)
+{
+	if (n == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
+		exit(99);
+	}
+}
+
+/**
+ * closure_error_handler - deals with errors regarding
+ * closure operation
+ * @n: int coming from the operation of the file
+ * @fd: file descriptor we are testing
+ * Return: nothing
+ */
+
+void closure_error_handler(int n, int fd)
+{
+	if (n == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+}
+
+/**
  * cp_file - copy one file to another
  * @file_from: file to copy
  * @file_to: destination file
@@ -23,44 +74,26 @@ int cp_file(char *file_from, char *file_to)
 	char buff[1024];
 
 	open_ff_result = open(file_from, O_RDONLY);
-	if (open_ff_result == -1)
-	{
-	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-	exit(98);
-	}
+	ff_error_handler(open_ff_result, file_from);
+
 	open_ft_result = open(file_to, O_CREAT | O_TRUNC | O_WRONLY, 0664);
-	if (open_ft_result == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-		exit(99);
-	}
+	ft_error_handler(open_ft_result, file_to);
+
 	for (i = 0; read_result != 0; i++)
 	{
 		read_result = read(open_ff_result, buff, 1024);
-		if (read_result == -1)
-		{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		exit(98);
-		}
-	write_result = write(open_ft_result, buff, read_result);
-		if (write_result == -1)
-		{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-		exit(99);
-		}
+		ff_error_handler(read_result, file_from);
+
+		write_result = write(open_ft_result, buff, read_result);
+		ft_error_handler(write_result, file_to);
 	}
-		close_ff_result = close(open_ff_result);
-		if (close_ff_result == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", open_ff_result);
-			exit(100);
-		}
+
+	close_ff_result = close(open_ff_result);
+	closure_error_handler(close_ff_result, open_ff_result);
+
 	close_ft_result = close(open_ft_result);
-	if (close_ft_result == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", open_ft_result);
-		exit(100);
-	}
+	closure_error_handler(close_ft_result, open_ft_result);
+
 	return (1);
 }
 
