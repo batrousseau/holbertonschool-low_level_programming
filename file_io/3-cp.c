@@ -83,9 +83,11 @@ int cp_file(char *file_from, char *file_to)
 	{
 		read_result = read(open_ff_result, buff, 1024);
 		ff_error_handler(read_result, file_from);
-
+		if ((read_result != -1 || read_result != 0))
+		{
 		write_result = write(open_ft_result, buff, read_result);
 		ft_error_handler(write_result, file_to);
+		}
 	}
 
 	close_ff_result = close(open_ff_result);
